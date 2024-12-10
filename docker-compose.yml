@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  standalone:
+    build:
+      context: ./app/standalone
+      dockerfile: Dockerfile
+    volumes:
+      - ./app/standalone/src:/usr/src/app/src
+      - ./app/standalone/dist:/usr/src/app/dist
+      - ./app/standalone/.clasp.json:/usr/src/app/.clasp.json
+      - ~/.clasprc.json:/root/.clasprc.json
+    environment:
+      - TZ=Asia/Tokyo
+    stdin_open: true
+    tty: true
+
+  spreadsheet:
+    build:
+      context: ./app/spreadsheet
+      dockerfile: Dockerfile
+    volumes:
+      - ./app/spreadsheet/src:/usr/src/app/src
+      - ./app/spreadsheet/dist:/usr/src/app/dist
+      - ./app/spreadsheet/.clasp.json:/usr/src/app/.clasp.json
+      - ~/.clasprc.json:/root/.clasprc.json
+    environment:
+      - TZ=Asia/Tokyo
+    stdin_open: true
+    tty: true
