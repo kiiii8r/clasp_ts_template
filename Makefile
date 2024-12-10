@@ -1,5 +1,5 @@
-STANDALONE_CONTAINER=project_x-standalone-1
-SPREADSHEET_CONTAINER=project_x-spreadsheet-1
+STANDALONE_CONTAINER=<リポジトリ名>-standalone-1
+SPREADSHEET_CONTAINER=<リポジトリ名>-spreadsheet-1
 
 standalone-login:
 	docker exec -it $(STANDALONE_CONTAINER) clasp login
